@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //将数组 [5，9，16，88，66，25，7，2，45，34，6]中大于等于10的元素选出来，放入新数组
+        //1.声明一个新的数组用于存放新数据newArr
+        //2.遍历原来的旧数组，找出大于等于10的元素
+        //3.依次追加给新的数组newArrr
+        
+        //方法1
+        var arr=[5,9,88,66,25,7,2,45,34,6];
+        var newArr=[];
+        var j=0;
+        for(i=0;i<=arr.length;i++){
+            if(arr[i]>=10){
+                newArr[j]=arr[i];   //新数组 newArr[j] 索引号应该从0开始    依次递增
+               j++;
+            }
+        }
+        console.log(newArr);
+
+        //方法2
+        var arr=[5,9,88,66,25,7,2,45,34,6];
+        var newArr=[];
+        //开始newArr.length是从0开始
+        for(i=0;i<=arr.length;i++){
+            if(arr[i]>=10){
+                newArr[newArr.length]=arr[i];   //新数组 newArr[j] 索引号应该从0开始    依次递增
+            //当程序存入第一个数组元素newArr[newArr.length]他就从0变成1，第二个存进去就从1变成2    依次递增
+            }
+        }
+        console.log(newArr);
+    </script>
+</body>
+</html>

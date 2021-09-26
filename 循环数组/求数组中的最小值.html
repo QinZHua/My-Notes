@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //求数组  [5,666,8,99,33,4,6,85,5,64,12] 中的最小值
+        //声明一个保存最小值的变量  least  
+        //默认最小值可以取数组中的第一个元素
+        //遍历这个数组，把里面每个数组元素都和least相比较
+        //如果这个数组元素小于least就把这个元素存在least里面，否则继续下轮比较
+        //最后输出这个least
+
+        var arr=[5,666,8,99,33,4,6,85,5,64,12];
+        var least=arr[0];
+        for(i=1;i<arr.length;i++){
+            if(least>arr[i]){
+                least=arr[i];
+            }
+        }
+        console.log('该数组最小的值为'+least);
+    </script>
+</body>
+</html>
