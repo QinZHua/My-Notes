@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    //弹出输入框输入班级人数（num）
+    //依次输入学生成绩score的总和保存在sum里面
+    //此时我们需要用到for循环，弹出的次数跟班级人数有关，表达式i<=num
+    //进行业务处理，计算总成绩sum之和后再计算平均值
+    //弹出结果
+        var num=prompt('请输入班级总人数');
+        var sum=0;
+        var average=0;
+        for(var i=1;i<=num;i++){
+           var score=prompt('请输入第'+i+'学生的成绩');
+           sum=sum+parseFloat(score);     
+         //  sum=sum+score;    这个是错误的   因为从prompt取过来的值都是字符串型需要转换成数字型     用parseFloat
+        }
+        average=sum/num;
+        alert('全班成绩之和等于'+sum);
+        alert('全班成绩平均值等于'+average);
+
+    </script>
+</body>
+</html>
