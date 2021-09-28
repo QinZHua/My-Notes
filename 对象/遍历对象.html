@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:'华华',
+            sex:'男',
+            age:'18',
+            fangfa:function(){}
+        }
+        // console.log(obj.name);
+        // console.log(obj.sex);
+        // console.log(obj.age);
+        //for in 遍历我们的对象
+        //for (变量 in 对象){
+
+        // }
+
+         for(var key in obj){
+             console.log(key);           //k 变量 输出    得到的是  属性名
+             console.log(obj[key]);      //obj[k]    得到是   属性值   
+        }
+    </script>
+</body>
+</html>

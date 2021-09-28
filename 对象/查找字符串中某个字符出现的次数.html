@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //查找字符串  'abcksjdhdjoldjkdjhskjd'   中所有j出现的位置以及次数    
+        //核心算法：先查找第一个j出现的位置
+        //然后只要indexOf返回的结果不是-1   旧继续往后查找
+        //因为indexOf   只能查找到第一个，所以后面的查找，一定是当前索引加1，从而继续查找
+        var str='abcksjdhdjoldjkdjhskjd';
+        var index=str.indexOf('j');
+        var num=0;
+        while(index!==-1){
+            console.log(index);
+            num++;
+            index=str.indexOf('j',index+1);
+        }
+        console.log('字符j出现的次数有：'+num);
+
+        //课后作业['red','blue','red','green','pink','red']   求red出现的位置和次数
+
+       var arr=['red','blue','red','green','pink','red'];
+       var element='red';
+       var ind=arr.indexOf(element);
+       var n=0;
+       while(ind!==-1){
+            console.log(ind);
+            n++;
+            ind=arr.indexOf(element,ind+1);
+        }
+        console.log('字符red出现的次数有：'+n);
+
+/*     
+        var indices = [];
+        var array = ['red','blue','red','green','pink','red'];
+        var element = 'red';
+        var idx = array.indexOf(element);
+        var n=0;
+        while (idx != -1) {
+        indices.push(idx);
+        n++;
+        idx = array.indexOf(element, idx + 1);
+        }
+        console.log(indices);
+        console.log(n);
+        // [0, 2, 5]           
+*/
+        var array = ['red','blue','red','green','pink','red'];
+        var element = 'red';
+        var idx = array.indexOf(element);
+        var n=0;
+        while (idx != -1) {
+        console.log(idx);
+        n++;
+        idx = array.indexOf(element, idx + 1);
+        }
+        console.log(n);
+        // [0, 2, 5]  
+    </script>
+</body>
+</html>

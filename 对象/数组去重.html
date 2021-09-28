@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组去重 ['c','a','b','c','a','d','a','c','b','f']  要求去除数组中重复的元素
+        //1.目标：把旧数组里面不重复的元素选取出来放在新数组中，重复的元素只保留一个，放在新数组中去重。
+        //2.核心算法：我们遍历旧数组，然后拿着旧数组去查询新数组，如果该元素在新数组中没有出现过，我们就添加，否则不添加。
+        //3.我们怎么知道该元素没有存在？利用 新数组.indexOf(数组元素)    如果有返回是-1    就说明新数组里面没有该元素
+        //封装一个 去重的函数  unique    独一无二的
+        function unique(arr){
+            var newArr=[];
+            for(var i=0;i<arr.length;i++){
+                if(newArr.indexOf(arr[i])===-1){     //获取元素是否存在
+                    newArr.push(arr[i]);             //把元素添加到新数组里面
+                }
+            }
+            return newArr;
+        }
+        var demo=unique(['c','a','b','c','a','d','a','c','b','f']);
+        console.log(demo);
+    </script>
+</body>
+</html>
