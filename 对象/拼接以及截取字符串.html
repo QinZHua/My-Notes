@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字符串操作方法
+        //1.concat('字符串1','字符串2'.....);
+        var str='abdf';
+        console.log(str.concat('red'));
+
+        //2.substr('截取的起始位置','截取几个字符');
+        var str1='春风吹又生';
+        console.log(str1.substr(2,2));      //第一个2是索引号   从第几个开始     第二个2是截取几个字符 
+
+        //其他方法
+        //1.替换字符  replace('被替换的字符','替换为的字符')    它只会替换第一个字符
+        var str2='dhjffke';
+        console.log(str2.replace('h','a'));
+
+        //有一个字符串   'sdagddasacsagcdcaagcasa'     要求把里面所有的a替换为*
+        var str3='sdagddasacsagcdcaagcasa';
+        while(str3.indexOf('a')!==-1){
+            str3=str3.replace('a','*');
+            // console.log(str3.replace('a','*'));        //直接卡频     显示不出来    就是用不了了吧
+        }
+        console.log(str3);
+
+        //2.字符转换为数组  split('分隔符')       前面我们学过  join   把数组转换成字符串
+        var str4='red,yellow,pink';
+        console.log(str4.split(','));
+        var str5='red&bule&green';
+        console.log(str5.split(','));
+    </script>
+</body>
+</html>
