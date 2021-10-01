@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //判断一个字符串 'abdjfbabsvfbhsavvbdvvv'   中出现最多的字符,并统计其次数
+        //核心算法：利用charAt()  遍历这个字符串
+        //把每个字符都存储给对象，如果对象没有该属性，就为1，如果存在了就+1
+        //遍历对象，得到最大值和该字符
+        var str='abdjfbabsvfbhsavvbdvvv';
+        var o={};
+        for(var i=0;i<=str.length;i++){
+            var chars=str.charAt(i);     //chars是字符串的每一个字符
+            if(o[chars]){                //o[chars]是得到的属性值
+                o[chars]++;
+            }else{
+                o[chars]=1;
+            }
+        }
+        console.log(o);
+
+        //2.遍历对象
+        var max=0;
+        var ch='';
+        for(var key in o){
+            //key  得到的    是属性名
+            //o[key]  得j到的  是属性值 
+            if(o[key]>max){
+                max=o[key];
+                ch=key;
+            }
+        }
+        console.log(max);
+        console.log('出现最多的字符是'+ch);
+    </script>
+</body>
+</html>
