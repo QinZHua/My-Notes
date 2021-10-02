@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date=new Date();
+        console.log(date.getFullYear());   //返回当前日期的年
+        console.log(date.getMonth()+1);      //月份  返回当前的月份小一个月    记得给月份+1
+        console.log(date.getDate());       //返回的是几号
+        console.log(date.getDay());        //星期几   周一返回是1    周六返回是6    但是周日返回是0   
+        console.log(date.getHours());      //时
+        console.log(date.getMinutes());    //分
+        console.log(date.getSeconds());    //秒   
+        //写一个今天是几年几月几日星期几
+        var year=date.getFullYear();
+        var month=date.getMonth()+1;
+        var dates=date.getDate();
+        arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        var day=date.getDay();
+        var hours=date.getHours();
+        hours=hours<10?'0'+hours:hours;
+        var minutes=date.getMinutes();
+        minutes=minutes<10?'0'+minutes:minutes;
+        var seconds=date.getSeconds();
+        seconds=seconds<10?'0'+seconds:seconds;
+        console.log('今天是：'+year+'年'+month+'月'+dates+'日 '+hours+':'+minutes+':'+seconds+' '+arr[day]);
+
+        function getTimer(){
+            var time=new Date();
+            var h=time.getHours();
+            h=h<10?'0'+h:h;
+            var m=time.getMinutes();
+            m=m<10?'0'+m:m;
+            var s=time.getSeconds();
+            s=s<10?'0'+s:s;
+            return h+':'+m+':'+s;
+        }
+        console.log(getTimer());
+
+
+    </script> 
+</body>
+</html>
