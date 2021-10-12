@@ -27,6 +27,24 @@
                 this.style.backgroundColor = "red";
             }
         }
+    //上面是按钮点击才会作用    下面的鼠标经过和鼠标离开
+    //     for(var i=0;i<btnArr.length;i++){   //要为每一个按钮绑定事件，所以用到了for循环
+    //     btnArr[i].onmouseover = function () {
+    //         //【重要】排他思想：先把所有按钮的className设置为空，然后把我（this）这个按钮的className设置为current
+    //         //排他思想和for循环连用
+    //         for(var j=0;j<btnArr.length;j++){
+    //             btnArr[j].className = "";
+    //         }
+    //         this.className = "current";  //【重要】核心代码
+    //     }
+    // }
+
+    // //鼠标离开current时，还原背景色
+    // for(var i=0;i<btnArr.length;i++){   //要为每一个按钮绑定事件，所以用到了for循环
+    //     btnArr[i].onmouseout = function () { //鼠标离开任何一个按钮时，就把按钮的背景色还原
+    //         this.className = "";
+    //     }
+    // }
     </script>
 </body>
 
