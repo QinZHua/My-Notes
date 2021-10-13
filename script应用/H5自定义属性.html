@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-qzh="9" data-getTime="2" data-list-name="qin"></div>
+    <script>
+        //1.设置H5自定义属性   
+        //H5规定自定义属性data-开头做为属性名并且赋值
+        var div=document.querySelector('div');
+        console.log(div.getAttribute('data-qzh'));
+        console.log(div.setAttribute('data-qzh',97));  
+        console.log(div.getAttribute('data-getTime'));
+        console.log(div.getAttribute('data-list-name'));
+        //H5新增的获取自定义属性的方法
+        //dataset   是一个集合里面存放了所有以data开头的自定义属性
+        console.log(div.dataset);
+        console.log(div.dataset.qzh);
+        console.log(div.dataset['qzh']);
+        //如果自定义属性里面有多个-链接的单词，我们获取的时候采取   驼峰命名法
+        console.log(div.dataset.listName);
+        console.log(div.dataset['listName']);
+    </script>
+</body>
+</html>
