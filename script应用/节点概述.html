@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 节点的优点 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box"></div>
+    <span class="erweima">x</span>
+    <script>
+        var box=document.querySelector('.box');
+        console.dir(box);
+    </script>
+
+    <div>
+        <h4>节点概述</h4>
+        <p>一般地，节点至少拥有nodeType(节点类型)、nodeName(节点名称)和nodeValue(节点值)这三个基本属性</p>
+        <ul>
+            <li>元素节点 nodeType 为1</li>
+            <li>属性节点 nodeType 为2</li>
+            <li>文本节点 nodeType 为3（文本节点包括文字、空格、换行等）</li>
+        </ul>
+        <p>我们在实际开发当中，节点操作的是元素节点</p>
+    </div>
+    <div>
+        <h3>为什么学节点操作</h3>
+        <p>获取元素通常使用两种方式：</p>
+        <div>
+           <h3>1.利用DOM提供的方法获取元素</h3>
+            <ul>
+                <li>document.getElementById()</li>
+                <li>document.getElementsByTagName()</li>
+                <li>document.querySelector()</li>
+                <li>逻辑性不强、繁琐</li>
+            </ul>
+        </div>  
+        <div>
+            <h3>2.利用节点层级关系获取元素</h3>
+            <ul>
+                <li>利用父子兄节点关系获取元素</li>
+                <li>逻辑性强、但是兼容性稍差</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
