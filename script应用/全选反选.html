@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            width: 500px;
+            margin: 100px auto;
+            height: 50px;
+        }
+        .wrap th{
+            background-color: cornflowerblue;
+            font-size: 16px;
+            text-align: center;
+            width: 120px;
+            /* background-color: rgb(219, 219, 219); */
+        }
+        tbody tr{
+            background-color: rgb(233, 231, 231);
+        }
+        .bg{
+            background-color: rgb(201, 201, 201);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll">
+                </th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>ipad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>ipad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+
+    // var list = document.getElementById("j_tb").getElementsByTagName("tr");
+    //1.获取元素    获取的是tbody  里面所有的行
+    var list=document.getElementById("j_tb").getElementsByTagName("tr");
+        //2.利用循环绑定注册事件
+        for(i=0;i<list.length;i++){
+    //         // list[i].style.backgroundColor ='red';    显示颜色之后鼠标经过就不作用了
+    //         // list[i].style.backgroundColor = i % 2 == 0 ? "red" : "yellow";
+    //         list[i].style.backgroundColor ='rgb(219, 219, 219)';
+    //         list[i].onmouseover = onmouseoverHandle;
+    //         list[i].onmouseout = onmouseoutHandele;
+    //         lastColor = "";
+    // function onmouseoverHandle() {
+    //     lastColor = this.style.backgroundColor;
+    //     this.style.backgroundColor = "rgb(190, 190, 190)";
+    // }
+    // function onmouseoutHandele() {
+    //     this.style.backgroundColor = lastColor;
+    // }
+
+            //3.鼠标经过事件   onmouseover 
+            list[i].onmouseover=function(){
+                this.className='bg';
+            }
+            //4.鼠标离开事件   onmouseout
+            list[i].onmouseout=function(){
+                this.className="";
+            }
+        }
+
+    //1.全选和取消全选做法：让让下面所有的复选框的checked属性（选中状态）跟随  全选按钮即可
+    //获取元素
+    var j_cbAll=document.getElementById("j_cbAll");   //全选按钮
+    var j_tbs=document.getElementById("j_tb").getElementsByTagName("input");   //下面所有的复选框
+    //注册事件
+    j_cbAll.onclick=function(){
+        //this.checked  它可以得到当前复选框的选中状态 如果是true   就是选中，如果是false   就是未选中
+        console.log(this.checked);
+        for(i=0;i<j_tbs.length;i++){
+            j_tbs[i].checked=this.checked;
+        }
+    }
+    //2.下面复选框需要全部选中，上面全选才能选中做法：给下面所有复选框绑定点击事件，每次点击，都要循环查看下面所有复选框是否有没被选中的
+    //如果有一个没被选中的，上面全选就不选中
+    for(i=0;i<j_tbs.length;i++){
+        j_tbs[i].onclick=function(){
+            //flag   控制全选按钮是否被选中
+            flag=true;
+            //每次点击下面的复选框都要选中检查四个小按钮是否全部选中
+            for(i=0;i<j_tbs.length;i++){
+                // j_cbAll.checked=flase;
+                if(!j_tbs[i].checked){
+                    flag=false;
+                    break;
+                    //退出for循环  这样可以提高执行效率   因为只要有一个没有选中，剩下的就无需循环
+                }
+            }
+            j_cbAll.checked=flag;
+        }
+    }
+</script>
+</body>
+</html>
