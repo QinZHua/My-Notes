@@ -12,7 +12,7 @@
 
     **当JavaScript放在外部文件时，不能包含 `<script>` 标签**
 
-    JavaScript 文件的文件扩展名是 .js
+    JavaScript 文件的文件扩展名是 .js  
 ```
 
     
