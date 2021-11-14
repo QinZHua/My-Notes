@@ -9,6 +9,7 @@
     document.getElementById('myImage').src='/i/eg_bulboff.gif'  
     document.getElementById('myImage').src='/i/eg_bulbon.gif'  
 
+
 3. JavaScript 能够改变 HTML 样式 (CSS)  
     例子：  
     document.getElementById("demo").style.fontSize = "50px"  
