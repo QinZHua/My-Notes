@@ -116,6 +116,7 @@ a.reverse();//a=['d','c','b','a'];
 //通过组合 sort() 和 reverse()，可以按降序对数组进行排序
 ```
 
+
 JavaScript 数组迭代方法   
 ---
 
