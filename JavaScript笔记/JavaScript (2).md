@@ -8,7 +8,7 @@
     |/=|
     |%=|
     |**=|
-
+    
 2. JavaScript 数据类型
     string  
     number  
